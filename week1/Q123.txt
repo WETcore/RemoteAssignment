@@ -1,0 +1,47 @@
+Q1.
+a.val id = 9527
+correct
+
+b. var number : Int = 5.6
+Not correct. 已宣告為Int, 不能將值設為非整數
+
+c. var title = "Hello Kotlin!"
+correct
+
+d. val content : String = null
+Not correct. 改為String? content才nullable
+
+e. val number : Double? = 556.6
+correct
+
+f. var list: List<String>? = listOf(null, null)
+Not correct. 此宣告表示list為nullable，但element非nullable
+
+g. var list: List<String?>? = listOf("Wayne", "Chen")
+correct
+
+h. list.size
+Not correct. 由於list為nullable, 呼叫size時沒考慮到是否為null
+可以用 ?. 對list做是否為null之判斷，如為null則不呼叫size
+或以 !!. 呼叫size而不理會其是否為null
+
+i. list?.size
+correct
+
+==================================
+
+Q2
+message 字串長度為39
+When由上至下check符合條件者
+故選 c
+
+==================================
+
+Q3
+選 d.
+
+迴圈用意為先將array的index, value 讀取寫入i, value
+再以i作為index讀取units的value
+接著將array的value由Double轉為Long
+
+d 選項為size 6的Array,且Lambda將it(index)作為次方，使其value為1000的0~5次方
