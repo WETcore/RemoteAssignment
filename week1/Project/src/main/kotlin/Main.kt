@@ -1,5 +1,5 @@
 fun main() {
-    val adventure = listOf(Human("Frodo"),Mage())
+    val adventure = listOf(Human("Frodo"),Mage("Gandolf"))
     for (man in adventure) man.attack()
     adventure[0].flag()
 }
@@ -16,6 +16,6 @@ open class Human(val name: String) {
     }
 }
 
-class Mage: Human("Gandolf") {
+class Mage(name: String): Human(name) {
     override fun attack() = println("$name use Fireball!")
 }
