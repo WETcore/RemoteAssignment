@@ -1,0 +1,65 @@
+1. What is Inheritance? Try to explain in Mandarin.
+父子類別彼此間的相互關係，
+只要父類允許子類可繼承父類的property及method
+子類可override父類的property及method
+但假設B,C若皆為A的子類，B或Ｃ其中一方不為其對方的子類
+Ex:
+open class Animal()
+ open class Human(): Animal()
+ open class Jack(): Human()
+ open class Dog(): Animal()
+ print("Is human an animal? ${Human() is Animal}\nIs Jack an animal? ${Jack() is Animal}\nIs dog an animal? ${Dog() is Animal}\nIs Jack a dog? ${Jack() is Dog}")
+Is human an animal? true
+Is Jack an animal? true
+Is dog an animal? true
+Is Jack a dog? false
+
+==========================================
+2. How to split a string in Android? Explain your understanding, and even better to attach some sample code.
+以split函數設定一字符作為分割
+val fruit = "apple,banana,coconut"
+val fruit_split = fruit.split(",")
+for (item in fruit_split){
+    println("$item")
+}
+
+==========================================
+3. What kind of key-value pair collection do we use in Android? Attach a sample code that uses for-loop to print each key-value pair.
+Map
+val alphabet = mapOf(Pair("A", 1), Pair("B", 2), Pair("C", 3))
+for (item in alphabet) println("${item.key} (${item.value})")
+
+==========================================
+4. What’s the difference between ArrayList and LinkedList? Try to explain in Mandarin.
+ArrayList以random access方式透過index存取值，LinkedList的一個節點儲存一個資料和下一資料的pointer
+若要頻繁取值，以index較為方便
+若要頻繁增減值，linklist可直接對pointer做更動，ArrayList可能會因增減而進行擴充容量
+
+==========================================
+5. What are Value Type variables? List out the Value Type variables you know.
+資料以值的方式儲存
+Ex:
+var a:Int = 1
+ var b = a
+ b = 2
+a依然會維持1的值
+---------------
+若以位址的方式儲存
+class c {
+     var num = 1
+ }
+ var a = c()
+ var b = a
+ b.num = 2
+a.num的值變為2
+----------------
+Value type variables:
+Int, Long, Float, Double, String, Char, Boolean, List, Set, Map
+
+==========================================
+6. What’s the maximum value of Int? If you want to represent integers larger than the limit, what should you do instead of using int variables?
+以kotlin而言
+Int最大值:2^31 - 1
+使用ULong
+val a = 1UL  
+ULong最大值:2^64 - 1
