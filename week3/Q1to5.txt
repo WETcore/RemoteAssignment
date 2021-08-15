@@ -1,0 +1,35 @@
+1. What is Encapsulation? Try to list out the benefits of Encapsulation.
+Encapsulation(封裝)指把property和method包在class內。property和method只能使用同一class做存取。
+pros:
+能使不希望透露的資料隱藏，在class之外增加程式碼安全性
+封裝進class及適當的命名也可降低程式碼複雜度，更容易閱讀
+class Fruit() {
+      private var a = "apple"
+ }
+ Fruit().a = "avocado"
+error: cannot access 'a': it is private in 'Fruit'
+
+================================
+2. Try to explain what enum is and why we use them.
+定義多個字串的類型，如有一系列資料其可被歸納為某一類，且不再隨意變動，使用enum相較於class宣告更簡潔
+================================
+3. How to use enum in Kotlin? Attach a sample code that uses enum in Kotlin.
+enum class DreamTeam(var playerName: String, var num: Int) {
+     FOWARD("Lebron", 23),
+     GUARD("Kobe", 24),
+     CENTER("Howard", 12)
+ }
+ DreamTeam.Center.num
+res7: kotlin.Int = 12
+
+================================
+4. What are the differences between LinearLayout and RelativeLayout? Try to explain in detail.
+LinearLayout分垂直與水平兩佈局方式，元件依照佈局方式進行排列
+RelativeLayout須先有parent view，其他元件再依照與其相對位置進行排列
+
+================================
+5. Try to explain the benefits of ConstraintLayout. Why should you use it?
+在多個元件的情況下相較於其他Layout可更簡化Hierachy
+對於Design模式較容易設計佈局
+
+
