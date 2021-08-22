@@ -1,0 +1,18 @@
+1.
+父類為多個子類的通用型態，子類們可以覆寫父類的method來產生多種行為
+=======================================================================
+2.
+onCreate()：在系統創建Activity時觸發,Activity進入Created state,配置使用資源，進入Started state
+onStart():在Activity進入Started state後觸發，Activity為visible，進入Resumed state
+onResumed():應用與使用者互動的狀態
+onPaused():當Activity進入後台但未被銷毀時觸發
+onStop(): Activity不再visible時觸發
+onRestart(): Activity從onStop()變onStart()時呼叫
+onDestroy(): Activity將要被 destroy時觸發
+=======================================================================
+3.
+集結多種Android libraries,協助Android developer的工具，包括四大類：Architecture,Foundation,Behavior,UI
+=======================================================================
+4. 
+Main tread主要處理畫面更新任務，為了使程式使用更流暢，若有其他耗時任務則會以Background Tread執行，
+Coroutines為Android develop實現非同步執行的其中一種方式。
