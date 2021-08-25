@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{marsProperty.type}"
+            android:text="@{marsProperty.displayPropertyType}"
             android:textColor="#de000000"
             android:textSize="20sp"
             tools:text="To Rent" />
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{String.valueOf(marsProperty.price)}"
+            android:text="@{marsProperty.displayPropertyPrice}"
             android:textColor="#de000000"
             android:textSize="20sp"
             tools:text="$100,000" />

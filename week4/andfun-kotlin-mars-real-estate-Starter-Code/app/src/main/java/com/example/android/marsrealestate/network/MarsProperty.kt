@@ -22,12 +22,15 @@ import android.content.Context
 import android.content.res.Resources
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.core.content.res.TypedArrayUtils.getString
+import androidx.core.content.res.TypedArrayUtils.getText
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.android.marsrealestate.R
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
+import java.security.AccessController.getContext
 
 @Parcelize
  class MarsProperty(
@@ -38,15 +41,26 @@ import kotlinx.android.parcel.Parcelize
     ) : Parcelable{
     val isRental
         get() = type == "rent"
-
-//    val displayPropertyPrice = let{
-//        val app  = Application()
-//        app.applicationContext.getString(
-//            when (it.isRental) {
-//                true -> R.string.display_price_monthly_rental
-//                false -> R.string.display_price
-//            }, it.price)?:"OMG"
-//    }
-
-
+    val displayPropertyType =
+        let {
+            when (type) {
+                "rent" -> "For Rent"
+//                    R.string.display_price_monthly_rental
+                "buy" -> "For Sale"
+//                    R.string.display_price
+                else -> "else"
+            }
+        }
+    val displayPropertyPrice =
+        let {
+            when (isRental) {
+                true -> "\$${price}/month"
+//                    R.string.display_price_monthly_rental
+                false -> "\$${price}"
+//                    R.string.display_price
+                else -> "else"
+            }
+        }
 }
+
+
